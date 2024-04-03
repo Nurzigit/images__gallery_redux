@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Документация
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+С начала что б запускать сайт нуд
+git clone direct to my project in github ar etc.
 
-In the project directory, you can run:
+## Запуск моего сайта
+
+В папке пректа вы должны прописать вот этот скрипт
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Проект запуститься вот этой локал хосте
+Open [http://localhost:3000](http://localhost:3000) 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Описание
 
-### `npm test`
+useIntersectionObserver — это пользовательский хук для React, который предоставляет функциональность для отслеживания видимости DOM-элемента в области просмотра (viewport). Он использует IntersectionObserver API для асинхронного отслеживания изменения видимости элементов по отношению к области просмотра или другим элементам.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Использование
 
-### `npm run build`
+Хук useIntersectionObserver предназначен для оптимизации загрузки контента (например, изображений) и выполнения анимаций или других действий только тогда, когда элемент становится видимым в области просмотра.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Параметры
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Хук useIntersectionObserver принимает два параметра:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# elementRef (React Ref): Ссылка на DOM-элемент, за видимостью которого нужно наблюдать.
+options (Object): Объект настроек для IntersectionObserver. 
+# Включает в себя:
+root (Element): Элемент, который используется как область просмотра для проверки видимости целевого элемента.
+rootMargin (string): Отступы от root, позволяющие изменить  
+# область для проверки пересечения.
+threshold (number | number[]): Порог(и), при котором будет считаться, что пересечение произошло.
 
-### `npm run eject`
+### Возвращаемое значение
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Хук возвращает булево значение isVisible:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+true, если элемент видим в области просмотра;
+false, если элемент не видим.
+Примечания
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Для оптимальной производительности и избежания утечек памяти, IntersectionObserver автоматически отменяет наблюдение за элементом при размонтировании компонента.
+Важно передать корректные options, чтобы IntersectionObserver работал как ожидается. Например, если threshold не задан, по умолчанию используется значение 0, что означает, что callback будет вызван при любом пересечении.
+Совместимость
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# IntersectionObserver API поддерживается во всех современных браузерах. Для обеспечения поддержки старых браузеров (например, Internet Explorer) может потребоваться полифилл.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
